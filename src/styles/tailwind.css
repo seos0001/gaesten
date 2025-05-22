@@ -1,11 +1,12 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 
-
-@theme {
-  /* Her tilføjes theme variable // tokens */
+/* Farver */
+:root {
+  --gul-200: #ffffd6;
+  --gul-500: #ffff95;
 }
 
 @layer base {
@@ -16,11 +17,14 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+
+  body {
+    background-color: var(--gul-200);
+  }
 }
 
-@layer components{
-
+@layer components {
 }
-@layer utilities{
-  
+
+@layer utilities {
 }
