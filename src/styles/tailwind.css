@@ -6,7 +6,20 @@
 /* Farver */
 :root {
   --gul-200: #ffffd6;
+  --gul-300: #ffffc1;
+  --gul-400: #ffffa8;
   --gul-500: #ffff95;
+
+  --blå-100: #e9f4fc;
+  --blå-200: #d2e8f9;
+  --blå-300: #b7daf5;
+  --blå-400: #a0cff2;
+  --blå-500: #8bc3ef;
+  --blå-600: #47a1e6;
+  --blå-700: #1c7cc5;
+  --blå-800: #135486;
+  --blå-900: #0a2a43;
+  --blå-1000: #03141f;
 }
 
 @layer base {
