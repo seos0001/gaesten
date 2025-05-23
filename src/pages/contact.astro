@@ -3,10 +3,57 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 import Link from '../components/Link.astro';
 import { Image } from 'astro:assets';
+import himmel from "../assets/images/himmel.webp"; 
 import thumbsup from "../assets/images/thumbsup.png";
 ---
 <MainLayout title="Contact">
 	<article>
-		<h1>Contact</h1>
-	</article>
+
+		<div class="relative h-[90vh]">
+			<!-- Billede bag teksten -->
+			<div class="absolute inset-0 -z-10 h-[90vh]">
+			  <img src={himmel.src} alt="Himmel" class="w-full h-full object-cover object-center" />
+			</div>
+	  <!-- Tekstblok der skal parallax-scrolles op over billedet -->
+	  <div class="parallaxelement relative z-10 max-w-5xl mx-auto mt-[110px] px-6 pt-[5rem] pb-[5rem] text-black grid md:grid-cols-2 gap-10 bg-[#FFFFC1] border-2 border-[#E9573E] backdrop-blur-sm">
+		<div>
+	
+			<h1 class="text-center text-6xl font-serif font-bold relative inline-block">
+				<span class="relative z-10">KONTAKT</span>
+			  </h1>
+			<p class="text-base text-black mb-4">Gæstgiveren</p>
+			<p class="leading-tight text-justify">
+			  E-mail: info@gaestgiveren.dk<br />
+			  Telefon nummer: +45 56 95 62 30<br />
+			  Instagram: @Gaesten<br />
+			  Facebook: Gæstgiveren
+			</p>
+			<p class="leading-tight text-justify">
+			  Theaterstræde 2, 3770 Allinge Bornholm<br />
+			  Indgang fra Nørregade 7
+			</p>
+			<p class="leading-tight text-justify">
+			  Gæstgiveren, Allinge ApS - CVR-nummer: 35227091
+			</p>
+    </div>
+	
 </MainLayout>
+
+
+<script is:inline>
+	window.addEventListener("scroll", () => {
+	  const el = document.querySelector(".parallaxelement");
+	  if (!el) return;
+  
+	  const scrollY = window.scrollY;
+	  const start = 0;
+	  const end = 1000;
+	  const minY = 0;
+	  const maxY = -400; // scroller opad, derfor negativ
+  
+	  const progress = Math.min(Math.max(scrollY / end, 0), 1);
+	  const translateY = minY + (maxY - minY) * progress;
+  
+	  el.style.transform = `translateY(${translateY}px)`;
+	});
+  </script>
