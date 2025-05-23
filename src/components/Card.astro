@@ -1,0 +1,45 @@
+---
+const {
+  ugetal = "UGE 27",
+  guest1,
+  guest2,
+  guest3,
+  guest4,
+  guest5,
+  guest6,
+  dato1,
+  dato2,
+  dato3,
+  dato4,
+  dato5,
+  dato6,
+  logoPath = "/gaesten_logo.svg",
+  bgcolor = "bg-[--gul-300]"
+} = Astro.props;
+---
+
+<div class={`transition-transform duration-300 hover:scale-105 hover:shadow-xl ${bgcolor} p-6 flex flex-row items-start gap-8 w-full`}>
+  <!-- Venstre kolonne med logo -->
+  <div class="flex-none w-20">
+    <img src={logoPath} alt="Gæsten logo" class="h-full w-auto object-contain" />
+  </div>
+
+  <!-- Højre indhold -->
+  <div class="flex flex-col justify-start">
+    <!-- Ugetal med oval -->
+    <div class="text-4xl font-mono border-2 border-black px-6 py-1 rounded-full inline-block w-fit mb-6">
+      {ugetal}
+    </div>
+
+    <!-- Individuelle gæster -->
+    <ul class="space-y-2 font-mono text-2xl">
+      {guest1 && dato1 && <li><span class="inline-block w-16">{dato1}</span> {guest1}</li>}
+      {guest2 && dato2 && <li><span class="inline-block w-16">{dato2}</span> {guest2}</li>}
+      {guest3 && dato3 && <li><span class="inline-block w-16">{dato3}</span> {guest3}</li>}
+      {guest4 && dato4 && <li><span class="inline-block w-16">{dato4}</span> {guest4}</li>}
+      {guest5 && dato5 && <li><span class="inline-block w-16">{dato5}</span> {guest5}</li>}
+      {guest6 && dato6 && <li><span class="inline-block w-16">{dato6}</span> {guest6}</li>}
+    </ul>
+  </div>
+</div>
+

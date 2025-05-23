@@ -1,15 +1,38 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
 import Link from '../components/Link.astro';
 import { Image } from 'astro:assets';
 import thumbsup from "../assets/images/thumbsup.png";
 ---
 <MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+
+<Card
+	ugetal="UGE 27"
+	dato1="28.7" guest1="Caroline Henderson"
+	dato2="29.7" guest2="Andreas Odbjerg"
+	dato3="30.7" guest3="Østen + Søn"
+	dato4="31.7" guest4="Jada"
+	dato5="1.8" guest5="Benny Jamz"
+	dato6="2.8" guest6="TV·2"
+	logoPath="/gaesten_logo.svg"
+	bgcolor="bg-[--gul-300]"
+  />
+
+  <Card
+	ugetal="UGE 28"
+	dato1="28.7" guest1="Marie Key"
+	dato2="29.7" guest2="The minds of 99"
+	dato3="30.7" guest3="Østen + Søn"
+	dato4="31.7" guest4="Jada"
+	dato5="1.8" guest5="Benny Jamz"
+	dato6="2.8" guest6="TV·2"
+	logoPath="/gaesten_logo.svg"
+	bgcolor="bg-[--gul-300]"
+  />
+
+
+
+
 </MainLayout>
