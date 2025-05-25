@@ -6,7 +6,45 @@ import { Image } from 'astro:assets';
 import thumbsup from "../assets/images/thumbsup.png";
 ---
 <MainLayout title="Tickets">
-	<article>
-		<h1>Tickets</h1>
-	</article>
+	<article class="font-mono bg-gradient-to-b from-yellow-100 to-blue-200 min-h-screen py-10 px-6">
+	  <!-- Info-boks -->
+	  <div class="bg-yellow-300 text-sm p-4 w-fit ml-10 mb-10 border-l-4 border-yellow-500 shadow">
+		<p> * Alle koncerter starter kl 20.00.<br />Langbordsmiddag serveres kl 17.30 inden koncertstart</p>
+	  </div>
+    <!-- Formular -->
+    <section class="bg-yellow-100 border border-orange-200 p-8 mx-auto w-full max-w-md text-center rounded-md shadow-md">
+      <h1 class="text-3xl font-bold mb-6 relative inline-block">
+        <span class="relative z-10">BILLETTER</span>
+      </h1>
+
+      <form class="space-y-4 text-left">
+        <div>
+          <label for="koncert" class="block text-sm mb-1">Vælg koncert:</label>
+          <select id="koncert" name="koncert" class="w-full border border-red-300 px-3 py-2 bg-yellow-50 rounded">
+            <option>Koncert A</option>
+            <option>Koncert B</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="gaester" class="block text-sm mb-1">Antal gæster:</label>
+          <input type="number" id="gaester" name="gaester" min="1" value="1" class="w-full border border-red-300 px-3 py-2 bg-yellow-50 rounded" />
+        </div>
+
+        <div>
+          <label for="middag" class="block text-sm mb-1">Tilvalg langbordsmiddag:</label>
+          <select id="middag" name="middag" class="w-full border border-red-300 px-3 py-2 bg-yellow-50 rounded">
+            <option>Nej tak</option>
+            <option>Ja tak</option>
+          </select>
+        </div>
+
+		<button
+		type="submit"
+		class="mt-6 bg-blue-300 hover:bg-blue-400 text-black font-bold py-2 px-4 shadow-md block mx-auto" >
+		Køb billet
+	  </button>
+      </form>
+    </section>
+  </article>
 </MainLayout>
