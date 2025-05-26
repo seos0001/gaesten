@@ -4,25 +4,107 @@ import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
 import Link from '../components/Link.astro';
 import { Image } from 'astro:assets';
-import thumbsup from "../assets/images/thumbsup.png";
+import himmel from "../assets/images/himmel.webp"
 ---
+
+<style>
+  html, body {
+    scroll-behavior: smooth;
+  }
+
+  .parallax-bg {
+    background-image: url('{himmel.src}');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  if (typeof window !== "undefined") {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+    });
+  }
+</script>
+
 <MainLayout title="Titel">
+  <div class="parallax-bg fixed inset-0 -z-10"></div>
 
-	<Card
-	ugetal="UGE 27"
-	guest1="28.7 Caroline Henderson"
-	guest2="29.7 Andreas Odbjerg"
-	guest3="30.7 Østen + Søn"
-	guest4="31.7 Jada"
-	guest5="1.8 Benny Jamz"
-	guest6="2.8 TV·2"
-	logoPath="/gaesten_logo.svg"
-	bgcolor="bg-[--gul-300]"
-  />
+  <div class="relative z-10 flex flex-col gap-24 items-center px-6 py-24">
+    <div class="fade-in">
+      <Card ugetal="UGE 27" 
+	  guest1="3.7 Marie Key (duo)" 
+	  guest2="4.7 The Minds of 99" 
+	  guest3="5.7 The Minds of 99" 
+	  logoPath="/gaesten_logo.svg" />
+    </div>
 
-  <Button>
-	Køb billet
-  </Button>
-  
+	<div class="fade-in">
+		<Card ugetal="UGE 28" 
+		guest1="8.7 Benjamin Hav & Familien" 
+		guest2="9.7 Benjamin Hav & Familien" 
+		guest3="10.7 Goss & School of X" 
+		guest4="11.7 MØ" 
+		guest5="12.7 Soleima" 
+		logoPath="/gaesten_logo.svg" />
+	  </div>
 
+	  <div class="fade-in">
+      <Card ugetal="UGE 29" 
+	  guest1="15.7 Barselona" 
+	  guest2="16.7 Emma Sehested Høegh" 
+	  guest3="18.7 Teitur (solo)" 
+	  guest4="19.7 APHACA" 
+	  logoPath="/gaesten_logo.svg" />
+    </div>
+
+	<div class="fade-in">
+		<Card ugetal="UGE 30" 
+		guest1="22.7 Brimheim + Angående mig" 
+		guest2="23.7 Peter Sommer" 
+		guest3="24.7 Hugorm" 
+		guest4="25.7 Malte Ebert" 
+		guest5="26.8 Selma Judith + Elias Rønnenfelt" 
+		logoPath="/gaesten_logo.svg" />
+	  </div>
+
+	  <div class="fade-in">
+		<Card ugetal="UGE 31" 
+		guest1="28.7 Caroline Henderson" 
+		guest2="29.7 Andreas Odbjerg" 
+		guest3="30.7 Østen + Søn" 
+		guest4="31.7 Jada" 
+		guest5="1.8 Benny Jamz" 
+		guest6="2.8 TV·2" 
+		logoPath="/gaesten_logo.svg" />
+	  </div>  
+
+
+
+  </div>
 </MainLayout>
+
+
