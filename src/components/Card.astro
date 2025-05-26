@@ -8,38 +8,45 @@ const {
   guest5,
   guest6,
   logoPath = "/gaesten_logo.svg",
-  bgcolor = "bg-[--gul-300]"
 } = Astro.props;
 ---
 
-<div class={`p-6 flex flex-row gap-8 w-full items-stretch outline-1`}>
-  <!-- Venstre kolonne med logo -->
-  <div class="flex-none h-full">
-    <img
-      src={logoPath}
-      alt="Gæsten logo"
-      class="h-full w-auto object-contain -rotate-90"
-      style="transform-origin: center;"
-    />
-  </div>
-
-  <!-- Højre indhold -->
-  <div class="flex flex-col justify-end">
-    <!-- Ugetal med oval -->
-    <div class="text-4xl border-2 border-black px-6 py-1 rounded-full inline-block w-fit mb-6">
-      {ugetal}
+<div
+  class="transition-colors duration-300 w-150 max-w-4xl mx-auto hover:bg-[--gul-500]"
+  style="background-color: var(--gul-300);"
+>
+  <div class="flex flex-row items-start gap-8 p-10">
+    
+    <!-- Logo-kolonne -->
+    <div class="w-20 flex-shrink-0 flex items-center">
+      <img
+        src={logoPath}
+        alt="Gæsten logo"
+        class="h-64 -rotate-90 object-contain"
+      />
     </div>
 
-    <!-- Gæsteliste -->
-    <ul class="space-y-2 text-2xl">
-      {guest1 && <li>{guest1}</li>}
-      {guest2 && <li>{guest2}</li>}
-      {guest3 && <li>{guest3}</li>}
-      {guest4 && <li>{guest4}</li>}
-      {guest5 && <li>{guest5}</li>}
-      {guest6 && <li>{guest6}</li>}
-    </ul>
+    <!-- Tekstindhold -->
+    <div class="flex flex-col gap-6">
+      <div class="text-3xl font-mono border-2 border-black rounded-full px-6 py-1 w-fit">
+        {ugetal}
+      </div>
+      <ul class="text-xl font-mono space-y-2 leading-snug">
+        {guest1 && <li>{guest1}</li>}
+        {guest2 && <li>{guest2}</li>}
+        {guest3 && <li>{guest3}</li>}
+        {guest4 && <li>{guest4}</li>}
+        {guest5 && <li>{guest5}</li>}
+        {guest6 && <li>{guest6}</li>}
+      </ul>
+    </div>
+
   </div>
 </div>
+
+
+
+
+
 
 
