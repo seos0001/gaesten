@@ -37,11 +37,11 @@
 }
 
 h1 {
-  @apply text-[96px] lg:text-[80px] mb-[24px] lg:mb-[50px] font-['Courier_New'];
+  @apply text-[96px] lg:text-[80px] mb-[24px] lg:mb-[50px] font-['Courier_New'] uppercase;
 }
 
 h2 {
-  @apply text-[64px] lg:text-[80px] mb-[20px] lg:mb-[50px] font-['Courier_New'];
+  @apply text-[64px] lg:text-[80px] mb-[20px] lg:mb-[50px] font-['Courier_New'] uppercase;
 }
 
 h3 {
