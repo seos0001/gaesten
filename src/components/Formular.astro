@@ -2,49 +2,49 @@
 import Button from "./Button.astro"
 ---
 <!-- Formular -->
-<section class="bg-[#FCFCDB] border border-[#E9573E] p-8 mx-auto w-full max-w-md text-center shadow-md">
-    <h1 class="text-3xl mb-6 relative inline-block">
-      <span class="relative z-10">Billetter</span>
-    </h1>
-  
-    <form id="form" class="space-y-4 text-left">
-      <div>
-        <label for="uge" class="block text-sm mb-1">Vælg uge:</label>
-        <select id="uge" name="uge" class="w-full border border-[#E9573E] px-3 py-2 bg-[#FCFCDB]">
-          <option>Uge 27</option>
-          <option>Uge 28</option>
-          <option>Uge 29</option>
-          <option>Uge 30</option>
-          <option>Uge 31</option>
-        </select>
-      </div>
-  
-      <div>
-        <label for="koncert" class="block text-sm mb-1">Vælg koncert:</label>
-        <select id="koncert" name="koncert" class="w-full border border-[#E9573E] px-3 py-2 bg-[#FCFCDB]">
-          <option>3.7 Marie Key (DUO)</option>
-          <option>4.7 The Minds Of 99</option>
-          <option>5.7 The Minds Of 99</option>
-        </select>
-      </div>
-  
-      <div>
-        <label for="gaester" class="block text-sm mb-1">Antal gæster:</label>
-        <input type="number" id="gaester" name="gaester" min="1" class="w-full border border-[#E9573E] px-3 py-2 bg-[#FCFCDB] " />
-      </div>
-  
-      <div>
-        <label for="middag" class="block text-sm mb-1">Tilvalg langbordsmiddag:</label>
-        <select id="middag" name="middag" class="w-full border border-[#E9573E] px-3 py-2 bg-[#FCFCDB] ">
-          <option>Ja tak</option>
-          <option>Nej tak</option>
-        </select>
-      </div>
-      
-      <Button href="https://www.ticketmaster.dk/venueartist/11877/1171274?language=da-dk" >
+<section class="bg-[#FCFCDB] border border-[#E9573E] p-8 mx-auto w-full max-w-xl text-center shadow-md">
+  <h1 class="text-3xl mb-6 relative inline-block text-center">
+    <span class="relative z-10">Billetter</span>
+  </h1>
+
+  <form id="form" class="space-y-4 text-left">
+    <div>
+      <label for="uge" class="block text-sm mb-1">Vælg uge:</label>
+      <select id="uge" name="uge" class="w-full border border-[#E9573E] px-3 py-2 bg-[#FCFCDB]">
+        <option>Uge 27</option>
+        <option>Uge 28</option>
+        <option>Uge 29</option>
+        <option>Uge 30</option>
+        <option>Uge 31</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="koncert" class="block text-sm mb-1">Vælg koncert:</label>
+      <select id="koncert" name="koncert" class="w-full border border-[#E9573E] px-3 py-2 bg-[#FCFCDB]">
+        <option>3.7 Marie Key (DUO)</option>
+        <option>4.7 The Minds Of 99</option>
+        <option>5.7 The Minds Of 99</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="gaester" class="block text-sm mb-1">Antal gæster:</label>
+      <input type="number" id="gaester" name="gaester" min="1" class="w-full border border-[#E9573E] px-3 py-2 bg-[#FCFCDB]" />
+    </div>
+
+    <div>
+      <label for="middag" class="block text-sm mb-1">Tilvalg langbordsmiddag:</label>
+      <select id="middag" name="middag" class="w-full border border-[#E9573E] px-3 py-2 bg-[#FCFCDB]">
+        <option>Ja tak</option>
+        <option>Nej tak</option>
+      </select>
+    </div>
+
+    <div class="text-center">
+      <Button href="https://www.ticketmaster.dk/venueartist/11877/1171274?language=da-dk">
         Køb Billet
       </Button>
-      
-    </form>
-  </section>
-  
+    </div>
+  </form>
+</section>
