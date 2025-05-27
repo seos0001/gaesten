@@ -1,107 +1,46 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
-import Card from '../components/Card.astro';
-import Link from '../components/Link.astro';
+import List from '../components/List.astro';
 import { Image } from 'astro:assets';
 import himmel from "../assets/images/himmel.webp";
 import img1 from "../assets/images/img1.webp";
-import img2 from "../assets/images/img2.webp";
-import img3 from "../assets/images/img3.webp";
-
-const galleryImages = [
-  img1.src, img2.src, img3.src
-];
 ---
 
-<style>
-  html, body {
-    scroll-behavior: smooth;
-  }
-
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .animate-marquee {
-    display: inline-block;
-    animation: marquee 30s linear infinite;
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-</style>
-
-<script is:inline>
-  window.addEventListener("DOMContentLoaded", () => {
-    const images = [
-      "{img1.src}", "{img2.src}", "{img3.src}"
-    ];
-    let current = 0;
-    const hero = document.getElementById("hero-gallery");
-    if (!hero) return;
-
-    setInterval(() => {
-      current = (current + 1) % images.length;
-      hero.style.backgroundImage = `url('${images[current]}')`;
-    }, 4000);
-  });
-</script>
-
 <MainLayout title="Gæsten Festival 2025">
-  <!-- Hero Section med skiftende galleri -->
-  <section id="hero-gallery" class="relative min-h-screen w-full flex flex-col items-center justify-center text-center text-white px-6 py-32 bg-cover bg-center transition-all duration-700" style={`background-image: url('${img1.src}');`}>
-    <div class="absolute inset-0 bg-black/40 z-0"></div>
+  <!-- Simpel hero med fast billede og tekst -->
+  <section class="relative min-h-screen w-full flex flex-col items-center justify-center text-center text-white px-6 py-32 bg-cover bg-center" style={`background-image: url('${img1.src}');`}>
+    <div class="absolute inset-0 bg-black/50 z-0"></div>
     <div class="relative z-10 max-w-3xl">
       <h1 class="text-5xl">Oplev magien på Gæsten Festival</h1>
       <div class="mt-8">
         <Button>Køb Billet</Button>
       </div>
     </div>
-
-    <!-- Sliding Marquee Banner -->
-    <div class="absolute bottom-0 left-0 w-full overflow-hidden mt-10 z-10">
-      <div class="animate-marquee whitespace-nowrap py-4 text-white text-xl font-semibold">
-        <span class="mx-4">Spillested med levende musik</span>
-        <span class="mx-4">Hvor de sprøde spiller, spiser og sover</span>
-        <span class="mx-4">Sommerferie på toppen af øen</span>
-        <span class="mx-4">Spillested med levende musik</span>
-        <span class="mx-4">Hvor de sprøde spiller, spiser og sover</span>
-        <span class="mx-4">Sommerferie på toppen af øen</span>
-      </div>
-    </div>
   </section>
 
-  <!-- Lineup Cards med himmelbaggrund -->
+  <!-- 5 forskudte List-komponenter med himmelbaggrund -->
   <section class="relative w-full px-6 py-24 text-black" style={`background-image: url('${himmel.src}'); background-size: cover; background-attachment: fixed; background-position: center;`}>
-    <div class="relative z-10 flex flex-col gap-24 items-center p-10">
-      <div class="fade-in">
-        <Card ugetal="UGE 27" guest1="3.7 Marie Key (duo)" guest2="4.7 The Minds of 99" guest3="5.7 The Minds of 99" logoPath="/gaesten_logo.svg" />
+    <div class="relative z-10 flex flex-col gap-24 p-10">
+      <div class="self-start">
+        <List ugetal="UGE 27" guest1="3.7 Marie Key (duo)" guest2="4.7 The Minds of 99" guest3="5.7 The Minds of 99" logoPath="/gaesten_logo.svg" />
       </div>
-      <div class="fade-in">
-        <Card ugetal="UGE 28" guest1="8.7 Benjamin Hav & Familien" guest2="9.7 Benjamin Hav & Familien" guest3="10.7 Goss & School of X" guest4="11.7 MØ" guest5="12.7 Soleima" logoPath="/gaesten_logo.svg" />
+      <div class="self-end">
+        <List ugetal="UGE 28" guest1="8.7 Benjamin Hav & Familien" guest2="9.7 Benjamin Hav & Familien" guest3="10.7 Goss & School of X" guest4="11.7 MØ" guest5="12.7 Soleima" logoPath="/gaesten_logo.svg" />
       </div>
-      <div class="fade-in">
-        <Card ugetal="UGE 29" guest1="15.7 Barselona" guest2="16.7 Emma Sehested Høegh" guest3="18.7 Teitur (solo)" guest4="19.7 APHACA" logoPath="/gaesten_logo.svg" />
+      <div class="self-start">
+        <List ugetal="UGE 29" guest1="15.7 Barselona" guest2="16.7 Emma Sehested Høegh" guest3="18.7 Teitur (solo)" guest4="19.7 APHACA" logoPath="/gaesten_logo.svg" />
       </div>
-      <div class="fade-in">
-        <Card ugetal="UGE 30" guest1="22.7 Brimheim + Angående mig" guest2="23.7 Peter Sommer" guest3="24.7 Hugorm" guest4="25.7 Malte Ebert" guest5="26.8 Selma Judith + Elias Rønnenfelt" logoPath="/gaesten_logo.svg" />
+      <div class="self-end">
+        <List ugetal="UGE 30" guest1="22.7 Brimheim + Angående mig" guest2="23.7 Peter Sommer" guest3="24.7 Hugorm" guest4="25.7 Malte Ebert" guest5="26.8 Selma Judith + Elias Rønnenfelt" logoPath="/gaesten_logo.svg" />
       </div>
-      <div class="fade-in">
-        <Card ugetal="UGE 31" guest1="28.7 Caroline Henderson" guest2="29.7 Andreas Odbjerg" guest3="30.7 Østen + Søn" guest4="31.7 Jada" guest5="1.8 Benny Jamz" guest6="2.8 TV·2" logoPath="/gaesten_logo.svg" />
+      <div class="self-start">
+        <List ugetal="UGE 31" guest1="28.7 Caroline Henderson" guest2="29.7 Andreas Odbjerg" guest3="30.7 Østen + Søn" guest4="31.7 Jada" guest5="1.8 Benny Jamz" guest6="2.8 TV·2" logoPath="/gaesten_logo.svg" />
       </div>
     </div>
   </section>
 </MainLayout>
+
 
 
 
