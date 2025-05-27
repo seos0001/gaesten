@@ -12,9 +12,12 @@ const {
 ---
 
 <div
-  class="transition-colors duration-300 w-150 max-w-4xl mx-auto hover:bg-[--gul-500]"
-  style="background-color: var(--gul-300);"
+  class="transition-colors duration-300 w-150 max-w-4xl mx-auto border"
+  style="background-color: var(--gul-300); border-color: var(--rød-500);"
+  onmouseover="this.style.backgroundColor='var(--gul-500)'" 
+  onmouseout="this.style.backgroundColor='var(--gul-300)'"
 >
+
   <div class="flex flex-row items-start gap-8 p-10">
     
     <!-- Logo-kolonne -->
