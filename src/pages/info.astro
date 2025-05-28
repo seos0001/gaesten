@@ -12,36 +12,50 @@ import placering from "../assets/images/placering.webp";
 
 <MainLayout title="Info - Gæsten">
 		<section class="bg-[#fefcd7] text-black px-6 md:px-16 py-16 space-y-24">
-		  
-		  <!-- GÆSTEN intro -->
-		  <div class="grid md:grid-cols-2 gap-10 items-center">
-			<img src={gaesten_ring.src} alt="Gæstgiveren" class="w-full object-cover rounded" />
-			<div>
-			  <h1 class="tracking-wide mb-4">GÆSTEN</h1>
-			  <p class="space-y-4 text-lg leading-relaxed">
-				<!-- Indsæt tekst her -->
-			  </p>
-			</div>
-		  </div>
+<!-- GÆSTEN intro -->
+<div class="grid md:grid-cols-2 gap-10 items-start">
+	<!-- Billede -->
+	<img src={gaesten_ring.src} alt="Gæstgiveren" class="w-full h-[500px] object-cover" />
+  
+	<!-- Logo + tekst -->
+	<div class="flex flex-col items-center text-center">
+	
+	  <div class="w-full -mt-3 mb-8"> 
+		<img src="/public/gaesten_logo.svg" alt="GÆSTEN logo" class="w-full h-auto mx-auto" />
+	  </div>
+  
+	  <!-- Tekst -->
+	  <p class="space-y-4 text-lg leading-relaxed text-left">
+		Velkommen til herlige eventyr på Gæstgiveren i Allinge.  
+		Vi har en skøn Gæstgivergård i Allinge. Et stenkast fra den hyggelige havn og det imponerende hav – omringet af de mest fantastiske klipper. Et vidunderligt feriested med pragtfuld mad i super sommerrestaurant, masser af musik, udendørsbar i den store fede gårdhave under kulørte lamper, sjove øl, lækre vine, dejlig kaffe og kage.  
+		Gæstgiverens dejlige sommerrestaurant og musikscene har åbent hver sommer i skolernes sommerferie. Resten af året udlejer vi ”luksusdelen” af Gæstgiveren i form af vores to dejlige sommerhuse. Læs mere under: ”sommerhus hele året…”
+	  </p>
+	</div>
+  </div>
+  
+  
+  
 	  
 		  <!-- MUSIK & LANGBORDSMIDDAG -->
 		  <div class="grid md:grid-cols-2 gap-10 items-center">
 			<div class="order-2 md:order-1">
 			  <h2 class="">MUSIK & LANGBORDSMIDDAG</h2>
 			  <p class="space-y-4 text-lg leading-relaxed">
-				<!-- Indsæt tekst her -->
+				Når haven fyldes af forventning og lyden af klirrende glas, gør vi klar til aftenens koncert. Scenen danner rammen om intime liveoplevelser med nogle af Danmarks mest elskede musikere. Publikum står tæt, og stemningen er helt særlig – her opstår en forbindelse mellem kunstner og gæster, som kun findes på Gæstgiveren. Musikken er ikke bare noget, du hører – det er noget, du er en del af. Langbordsmiddag er en fælles spiseoplevelse ved lange borde, hvor man nyder mad og drikke i godt selskab. Duften af bornholmske råvarer breder sig fra smedens store grill, mens kokkene arbejder på terrassen. Sjældne vine og kolde fadøl serveres, og Gæstgiveren summer af hygge og stemning.
 			  </p>
 			</div>
-			<img src={koncert.src} alt="Koncert og middag" class="w-full object-cover rounded order-1 md:order-2" />
+			<img src={koncert.src} alt="Koncert og middag" class="w-full object-cover order-1 md:order-2" />
 		  </div>
 	  
 		  <!-- SOMMERHUS HELE ÅRET -->
 		  <div class="grid md:grid-cols-2 gap-10 items-center">
-			<img src={toerresnor.src} alt="Sommerhus hele året" class="w-full object-cover rounded" />
+			<img src={toerresnor.src} alt="Sommerhus hele året" class="w-full h-[500px] object-cover"/>
 			<div>
 			  <h2 class="">SOMMERHUS HELE ÅRET</h2>
 			  <p class="space-y-4 text-lg leading-relaxed">
-				<!-- Indsæt tekst her -->
+
+				De to feriehuse lejer vi ud hele året. De er med eget køkken og bad og syv sovepladser fordelt på tre soveværelser i hvert hus.
+				De er i to etager, og der er direkte udsigt til havnen fra 1. salen.
 			  </p>
 			</div>
 		  </div>
@@ -51,25 +65,29 @@ import placering from "../assets/images/placering.webp";
 			<div class="order-2 md:order-1">
 			  <h2 class="">PLADS TIL FEST</h2>
 			  <p class="space-y-4 text-lg leading-relaxed">
-				<!-- Indsæt tekst her -->
+				Hele året kan vi åbne Gæstgiveren for større arrangementer, gode fester, kæmpe familieture og andet herligt. Vi har masser af plads at føle sig hjemme på. Vi har holdt nogle vidunderlige bryllupper, firma-get-to-gether-ting, polterabends med rapelling og svævebaner og jeg skal komme efter dig. Golf-weekender for tjekkede drenge, og forkælelses-weekender for lækre kællinger. Vi kan klare hvad som helst. Især himmelsk mad, hygge i de gode, gamle krostuer - og sjov underholdning. 
 			  </p>
 			</div>
-			<img src={blomster.src} alt="Plads til fest" class="w-full object-cover rounded order-1 md:order-2" />
+			<img src={blomster.src} alt="Plads til fest" class="w-full h-[500px] object-cover md:order-2" />
 		  </div>
 	  
 		  <!-- PLACERING -->
 		  <div class="grid md:grid-cols-2 gap-10 items-center">
-			<img src={placering.src} alt="Placering" class="w-full object-cover rounded" />
+			<img src={placering.src} alt="Placering"class="w-full h-[500px] object-cover" />
 			<div>
 			  <h2 class="">PLACERING</h2>
 			  <p class="space-y-4 text-lg leading-relaxed">
-				<!-- Indsæt tekst her -->
+				I må ikke snyde jer selv for den suveræne natur på stedet. I vores enorme have flyver gule sommerfugle rundt hele dagen.
+				Fire minutters gang ad brostensbelagte små gader gennem byen – forbi super røgeriet – ligger den lille hyggelige Næs Badestrand, hvor friske lokale bornholmere springer i det livgivende hav året rundt.
+				En kilometer i den anden retning ligger Sandvigs lidt større lækre badestrand.
+				Hammershus ligger lige rundt om Bornholms nordspids, ca. to km. fra Gæstgiveren. Her nyder vi utrolige solnedgange, inden vi går hjem til sjove øl og en lille god rom under kulørte lamper i den fede udendørsbar.
+				
 			  </p>
 			</div>
 		  </div>
 	  
 		  <!-- Afslutning -->
 		  <div class="text-center mt-20">
-			<p class="text-2xl italic text-red-700">Vi ses til eventyr på<br />Gæsten i Allinge!</p>
+			<p class="font-kapakana animate-pulse" style="color: var(--rød-500); -webkit-text-stroke: 1px black;">Vi ses til eventyr på<br />Gæsten i Allinge!</p>
 		  </div>
 </MainLayout>
