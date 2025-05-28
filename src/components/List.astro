@@ -12,15 +12,16 @@ const {
 ---
 
 <section class="container mx-auto px-4">
-  <div class="flex w-full max-w-3xl h-[320px] bg-(--gul-300) overflow-hidden" style="width: 550px;">
+  <div class="flex w-full max-w-3xl min-h-[400px] bg-(--gul-300) overflow-hidden border border-[#E9573E]" style="width: 550px;">
     <!-- Venstre kolonne med logo -->
-    <div class="w-16 flex-shrink-0 flex items-center justify-center">
-      <img
-        src={logoPath}
-        alt="Gæsten logo"
-        class="h-72 w-auto object-contain"
-      />
-    </div>
+  <div class="w-24 flex-shrink-0 flex items-center justify-center px-2">
+  <img
+    src={logoPath}
+    alt="Gæsten logo"
+    class="h-86 w-auto object-contain"
+  />
+  </div>
+
 
     <!-- Højre kolonne -->
     <div class="flex flex-col grow p-6 justify-between">
@@ -33,7 +34,7 @@ const {
 
       <!-- Gæsteliste placeret i bunden -->
       <div class="flex-grow flex items-end overflow-hidden">
-        <ul class="space-y-2 leading-snug w-full overflow-y-hidden">
+        <ul class="space-y-2 leading-snug w-full overflow-y-hidden text-[18px] font-['Courier_New']">
           {guest1 && <li><a href="/tickets02" class="hover:underline">{guest1}</a></li>}
           {guest2 && <li><a href="/tickets02" class="hover:underline">{guest2}</a></li>}
           {guest3 && <li><a href="/tickets02" class="hover:underline">{guest3}</a></li>}
