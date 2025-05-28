@@ -40,11 +40,11 @@
 }
 
 h1 {
-  @apply text-[96px] lg:text-[80px] mb-[24px] lg:mb-[50px] font-['Courier_New'] uppercase;
+  @apply text-[96px] lg:text-[80px] mb-[24px] lg:mb-[50px] font-['Courier_New'];
 }
 
 h2 {
-  @apply text-[64px] lg:text-[80px] mb-[20px] lg:mb-[50px] font-['Courier_New'] uppercase;
+  @apply text-[64px] lg:text-[80px] mb-[20px] lg:mb-[50px] font-['Courier_New'];
 }
 
 h3 {
@@ -54,4 +54,8 @@ h3 {
 p,
 a {
   @apply text-[24px] lg:text-[16px] font-['Courier_New'];
+}
+
+.font-kapakana {
+  font-family: "Kapakana", sans-serif;
 }

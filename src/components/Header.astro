@@ -1,63 +1,54 @@
 ---
 ---
+
 <header
   style="background: linear-gradient(to bottom, var(--gul-500), var(--gul-200));"
-  class="py-10 px-10 flex justify-between"
+  class="relative py-10 px-10 flex justify-between items-center"
 >
-  <!-- Logo med billede -->
- <div class="flex items-center">
-    <a href="/" class="flex items-center">
-      <img src="/public/g_logo.svg" alt="Logo" class="h-16 w-auto"/>
-    </a>
-  </div>
+  <!-- Logo -->
+  <a href="/">
+    <img src="/g_logo.svg" alt="Logo" class="h-12" />
+  </a>
 
-  <!-- Burger menu ikon -->
-<button id="menu-toggle" class="flex flex-col justify-center items-end space-y-[4px] w-10 h-10 p-1 lg:hidden">
-  <span class="w-6 h-[2px] bg-black block"></span>
-  <span class="w-6 h-[2px] bg-black block"></span>
-  <span class="w-6 h-[2px] bg-black block"></span>
-</button>
-
-  <!-- Navigation -->
-   
-  <nav class="space-x-10 text-sm text-black mt-1">
-    <a href="/tickets" class="hover:underline">Billetter</a>
-    <a href="/index" class="hover:underline">Program</a>
-    <a href="/info" class="hover:underline">Info</a>
-    <a href="/contact" class="hover:underline">Kontakt</a>
-    <a href="#folkemoede" class="hover:underline">Folkemøde</a>
+  <!-- Desktop navigation -->
+  <nav class="hidden lg:flex space-x-6 text-black">
+    <a href="/tickets">Billetter</a>
+    <a href="/index">Program</a>
+    <a href="/info">Info</a>
+    <a href="/contact">Kontakt</a>
+    <a href="#folkemoede">Folkemøde</a>
   </nav>
 
-  <!-- Mobilmenu -->
+  <!-- Burger button -->
+  <button id="menu-toggle" class="lg:hidden flex flex-col space-y-1 w-8 h-8 z-40">
+    <span class="bg-black h-[2px] w-full"></span>
+    <span class="bg-black h-[2px] w-full"></span>
+    <span class="bg-black h-[2px] w-full"></span>
+  </button>
+
+  <!-- Mobilmenu (dækker hele skærmen) -->
   <nav
     id="mobile-menu"
-    class="hidden absolute top-0 right-0 w-1/3 h-auto max-h-[80vh] bg-[#FEEEBD] flex-col p-8 shadow-lg lg:hidden overflow-y-auto z-30"
+    class="hidden fixed inset-0 bg-yellow-100 p-8 flex flex-col items-end z-50"
   >
-    <div class="flex justify-end">
-      <button id="close-menu" class="text-3xl">&times;</button>
-    </div>
-    <div class="flex flex-col space-y-4 mt-4 text-right">
-      <a href="/about" class="block hover:underline border-b py-2">Billetter</a>
-      <a href="/buy" class="block hover:underline border-b py-2">Program</a>
-      <a href="/donate" class="block hover:underline border-b py-2">Info</a>
-      <a href="/donate" class="block hover:underline border-b py-2">Kontakt</a>
-      <a href="/donate" class="block hover:underline border-b py-2">Folkemøde</a>
+    <button id="close-menu" class="text-4xl font-bold mb-8">&times;</button>
+    <div class="flex flex-col space-y-6 items-end text-right text-lg w-full pr-4">
+      <a href="/tickets" class="hover:underline">Billetter</a>
+      <a href="/index" class="hover:underline">Program</a>
+      <a href="/info" class="hover:underline">Info</a>
+      <a href="/contact" class="hover:underline">Kontakt</a>
+      <a href="#folkemoede" class="hover:underline">Folkemøde</a>
     </div>
   </nav>
 </header>
 
 <script is:inline>
-  document.getElementById("menu-toggle").addEventListener("click", () => {
-    const menu = document.getElementById("mobile-menu");
-    menu.classList.toggle("hidden");
-  });
+  const toggle = document.getElementById("menu-toggle");
+  const close = document.getElementById("close-menu");
+  const menu = document.getElementById("mobile-menu");
 
-  document.getElementById("close-menu").addEventListener("click", () => {
-    document.getElementById("mobile-menu").classList.add("hidden");
-  });
+  toggle.addEventListener("click", () => menu.classList.remove("hidden"));
+  close.addEventListener("click", () => menu.classList.add("hidden"));
 </script>
-
-
-
 
   
