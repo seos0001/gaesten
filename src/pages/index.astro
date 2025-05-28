@@ -9,26 +9,60 @@ import peter_sommer from "../assets/images/peter_sommer.webp";
 import goss_schoolofx from "../assets/images/goss_schoolofx.webp";
 import brimheim_angmig from "../assets/images/brimheim_angmig.webp";
 import selma_elias from "../assets/images/selma_elias.webp";
-import oeasten_soen from "../assets/images/oeasten_soen.webp";
+import oesten_soen from "../assets/images/oesten_soen.webp";
+import star from "../assets/images/star.svg";
 ---
 
 <MainLayout title="Gæsten Festival 2025">
-  <!-- Hero billede-karrusel -->
-  <div class="relative w-full h-[70vh] overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <div class="w-full h-full relative">
-        <div class="absolute inset-0 transition-opacity duration-[500ms] ease-in-out opacity-100" data-hero-slide>
-          <img src={goss_schoolofx.src} alt="Slide 1" class="w-full h-full object-cover" />
-        </div>
-        <div class="absolute inset-0 transition-opacity duration-[500ms] ease-in-out opacity-0" data-hero-slide>
-          <img src={brimheim_angmig.src} alt="Slide 2" class="w-full h-full object-cover" />
-        </div>
-        <div class="absolute inset-0 transition-opacity duration-[500ms] ease-in-out opacity-0" data-hero-slide>
-          <img src={selma_elias.src} alt="Slide 3" class="w-full h-full object-cover" />
-        </div>
+<!-- Hero billede-karrusel med CTA og info -->
+<div class="relative w-full h-[65vh] overflow-hidden text-white">
+  <!-- Billeder -->
+  <div class="absolute inset-0 z-0">
+    <div class="w-full h-full relative">
+      <div class="absolute inset-0 transition-opacity duration-[500ms] ease-in-out opacity-100" data-hero-slide>
+        <img src={goss_schoolofx.src} alt="Slide 1" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 transition-opacity duration-[500ms] ease-in-out opacity-0" data-hero-slide>
+        <img src={brimheim_angmig.src} alt="Slide 2" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 transition-opacity duration-[500ms] ease-in-out opacity-0" data-hero-slide>
+        <img src={selma_elias.src} alt="Slide 3" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 transition-opacity duration-[500ms] ease-in-out opacity-0" data-hero-slide>
+        <img src={oesten_soen.src} alt="Slide 4" class="w-full h-full object-cover" />
       </div>
     </div>
+
+
   </div>
+
+  <!-- Hero tekst + CTA -->
+  <div class="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 max-w-3xl mx-auto">
+    <img src={star.src} alt="Stjerne" class="w-20 h-20 mb-4 animate-pulse" />
+
+    <h1 class="text-3xl md:text-4xl font-bold leading-snug mb-4 drop-shadow">
+      Velkommen til Gæsten Festival 2025
+    </h1>
+
+    <p class="text-base md:text-lg mb-6 drop-shadow text-white/90">
+      I år får du noget helt nyt: <strong>dobbeltkoncerter</strong> – to kunstnere samme aften, til én og samme pris!
+    </p>
+
+    <div class="mb-6">
+      <Button href="/tickets" label="Køb billet nu" />
+    </div>
+
+    <!-- Scroll indikator -->
+    <div class="absolute bottom-6 flex flex-col items-center text-sm text-white/70">
+      <span class="mb-1">Scroll</span>
+      <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+
 
   <!-- 5 forskudte List-komponenter med himmelbaggrund -->
   <section class="relative w-full px-6 py-24 text-black" style={`background-image: url('${himmel.src}'); background-size: cover; background-attachment: fixed; background-position: center;`}>
