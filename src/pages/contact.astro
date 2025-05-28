@@ -4,69 +4,56 @@ import Button from '../components/Button.astro';
 import Link from '../components/Link.astro';
 import { Image } from 'astro:assets';
 import himmel from "../assets/images/himmel.webp"; 
-import thumbsup from "../assets/images/thumbsup.png";
 ---
+
 <MainLayout title="Kontakt">
-	<article>
-	  <!-- Baggrundsbillede -->
-	  <div class="relative h-[80vh]">
-		<div class="absolute inset-0 -z-10 h-[90vh]">
-			<img src={himmel.src} alt="Himmel" class="w-full h-full object-cover object-center" />
+  <article>
+    <!-- Baggrundsbillede med parallax -->
+	<div class="relative h-[90vh] flex items-center justify-center pt-24">
+		<!-- Billedbaggrund -->
+		<div class="absolute inset-0 -z-10">
+		  <img src={himmel.src} alt="Himmel" class="w-full h-full object-cover object-center" />
+		</div>
+	  
+		<!-- Kontaktboks -->
+		<div class="parallaxelement relative border shadow-lg px-8 py-10 max-w-xl w-full text-left space-y-6 -translate-y-12"
+			 style="background-color: var(--gul-300); border-color: var(--rød-500);">
+		  <h1 class="text-center">KONTAKT</h1>
+	  
+		  <!-- Info -->
+		  <div>
+			<p>Gæstgiveren</p>
+			<br>
+			<p>E-mail: <a href="mailto:info@gaestgiveren.dk" class="underline">info@gaestgiveren.dk</a></p>
+			<p>Telefon: <a href="tel:+4556956230" class="underline">+45 56 95 62 30</a></p>
+			<p>Instagram: <a href="https://instagram.com/Gaesten" target="_blank" class="underline">@Gaesten</a></p>
+			<p>Facebook: Gæstgiveren</p>
+			<br>
+			<p>Theaterstræde 2, 3770 Allinge, Bornholm</p>
+			<p>Indgang fra Nørregade 7</p>
+			<p>Gæstgiveren, Allinge ApS – CVR: 35227091</p>
 		  </div>
-  
-		<!-- Tekstblok -->
-		<div class="parallaxelement relative z-10 max-w-5xl mx-auto  px-6 py-16 bg-(--gul-300) border border-[#E9573E] ">
-  
-		<!-- Venstre kolonne -->
-<div class="space-y-4">
-	<div class="w-full text-center">
-	  <h1>KONTAKT</h1>
-	</div>
-  
-			<div class="text-base space-y-2">
-			  <p class="">Gæstgiveren</p>
-			  <p><span class="">E-mail:</span> <a href="mailto:info@gaestgiveren.dk" class="underline">info@gaestgiveren.dk</a></p>
-			  <p><span class="">Telefon:</span> <a href="tel:+4556956230" class="underline">+45 56 95 62 30</a></p>
-			  <p><span class="">Instagram:</span> <a href="https://instagram.com/Gaesten" target="_blank" class="underline">@Gaesten</a></p>
-			  <p><span class="">Facebook:</span> Gæstgiveren</p>
-			</div>
-		  </div>
-  
-		  <!-- Højre kolonne -->
-		  <div class="text-base space-y-2">
-			<p>
-			  <span class="">Adresse:</span><br />
-			  Theaterstræde 2<br />
-			  3770 Allinge, Bornholm<br />
-			  Indgang fra Nørregade 7
-			</p>
-			<p class="text-sm">
-			  Gæstgiveren, Allinge ApS – CVR-nummer: 35227091
-			</p>
-		  </div>
-  
 		</div>
 	  </div>
-	</article>
-  
-	<!-- Parallax script -->
-	<script is:inline>
-	  window.addEventListener("scroll", () => {
-		const el = document.querySelector(".parallaxelement");
-		if (!el) return;
-  
-		const scrollY = window.scrollY;
-		const start = 0;
-		const end = 1000;
-		const minY = 0;
-		const maxY = -400;
-  
-		const progress = Math.min(Math.max(scrollY / end, 0), 1);
-		const translateY = minY + (maxY - minY) * progress;
-  
-		el.style.transform = `translateY(${translateY}px)`;
-	  });
-	</script>
-  </MainLayout>
+	  
+	  
+  </article>
+
+  <!-- Parallax script -->
+  <script is:inline>
+    window.addEventListener("scroll", () => {
+      const el = document.querySelector(".parallaxelement");
+      if (!el) return;
+      const scrollY = window.scrollY;
+      const end = 1000;
+      const minY = 0;
+      const maxY = -300;
+      const progress = Math.min(Math.max(scrollY / end, 0), 1);
+      const translateY = minY + (maxY - minY) * progress;
+      el.style.transform = `translateY(${translateY}px)`;
+    });
+  </script>
+</MainLayout>
+
   
   

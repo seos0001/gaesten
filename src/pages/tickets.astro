@@ -4,21 +4,29 @@ import Button from '../components/Button.astro';
 import Link from '../components/Link.astro';
 import { Image } from 'astro:assets';
 import thumbsup from "../assets/images/thumbsup.png";
-import himmel from "../assets/images/himmel.webp"
+import himmel from "../assets/images/himmel.webp";
 import Formular from "../components/Formular.astro";
+import star from "../assets/images/star.svg"; // Sørg for at filnavnet og sti stemmer
 ---
+
 <MainLayout title="Tickets">
-  <div class="relative h-[90vh]">
-    <!-- Billede bag teksten -->
-    <div class="absolute inset-0 -z-10 h-[90vh]">
+  <div class="relative min-h-[140vh] flex flex-col justify-start items-center pt-32">
+    <!-- Baggrundsbillede -->
+    <div class="absolute inset-0 -z-10">
       <img src={himmel.src} alt="Himmel" class="w-full h-full object-cover object-center" />
     </div>
 
-	  <!-- Info-boks -->
-	  <div class="bg-(--gul-300)  mt-4 text-sm p-4 w-fit ml-10 mb-10 bg-(--blå-600) shadow">
-		<p> * Alle koncerter starter kl 20.00.<br />Langbordsmiddag serveres kl 17.30 inden koncertstart</p>
-	  </div>
-    	  <!-- Formular -->
-        <Formular />
+    <!-- Info-boks med stjerne -->
+    <div class="bg-[var(--gul-500)] border border-[var(--rød-500)] text-sm p-4 shadow flex items-start gap-3 self-start ml-10 mt-[-40px] mb-10 max-w-md">
+      <img src={star.src} alt="Stjerne" class="w-15 h-15 mt-1 flex-shrink-0" />
+      <p class="leading-snug">
+        Alle koncerter starter kl. 20.00.<br />
+        Langbordsmiddag serveres kl. 17.30<br />
+        inden koncertstart
+      </p>
+    </div>
 
+    <!-- Formular -->
+    <Formular />
+  </div>
 </MainLayout>
