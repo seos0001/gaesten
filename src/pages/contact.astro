@@ -6,52 +6,67 @@ import { Image } from 'astro:assets';
 import himmel from "../assets/images/himmel.webp"; 
 import thumbsup from "../assets/images/thumbsup.png";
 ---
-<MainLayout title="Contact">
+<MainLayout title="Kontakt">
 	<article>
-
-		<div class="relative h-[90vh]">
-			<!-- Billede bag teksten -->
-			<div class="absolute inset-0 -z-10 h-[90vh]">
-			  <img src={himmel.src} alt="Himmel" class="w-full h-full object-cover object-center" />
+	  <!-- Baggrundsbillede -->
+	  <div class="relative h-[80vh]">
+		<div class="absolute inset-0 -z-10 h-[90vh]">
+			<img src={himmel.src} alt="Himmel" class="w-full h-full object-cover object-center" />
+		  </div>
+  
+		<!-- Tekstblok -->
+		<div class=" parallaxelement relative z-10 max-w-5xl mx-auto  px-6 py-16 bg-(--gul-300) border 2px solid bg---rød-500)">
+  
+		<!-- Venstre kolonne -->
+<div class="space-y-4">
+	<div class="w-full text-center">
+	  <h1>KONTAKT</h1>
+	</div>
+  
+			<div class="text-base space-y-2">
+			  <p class="">Gæstgiveren</p>
+			  <p><span class="">E-mail:</span> <a href="mailto:info@gaestgiveren.dk" class="underline">info@gaestgiveren.dk</a></p>
+			  <p><span class="">Telefon:</span> <a href="tel:+4556956230" class="underline">+45 56 95 62 30</a></p>
+			  <p><span class="">Instagram:</span> <a href="https://instagram.com/Gaesten" target="_blank" class="underline">@Gaesten</a></p>
+			  <p><span class="">Facebook:</span> Gæstgiveren</p>
 			</div>
-	  <!-- Tekstblok der skal parallax-scrolles op over billedet -->
-	  <div class="parallaxelement relative z-10 max-w-5xl mx-auto mt-[110px] px-6 pt-[5rem] pb-[5rem] text-black grid md:grid-cols-2 gap-10 bg-[#FFFFC1] border-2 border-[#E9573E] backdrop-blur-sm">
-		<div>
-	
-			<h1>Kontakt</h1>
-			<p class="text-base text-black mb-4">Gæstgiveren</p>
-			<p class="leading-tight text-justify">
-			  E-mail: info@gaestgiveren.dk<br />
-			  Telefon nummer: +45 56 95 62 30<br />
-			  Instagram: @Gaesten<br />
-			  Facebook: Gæstgiveren
-			</p>
-			<p class="leading-tight text-justify">
-			  Theaterstræde 2, 3770 Allinge Bornholm<br />
+		  </div>
+  
+		  <!-- Højre kolonne -->
+		  <div class="text-base space-y-2">
+			<p>
+			  <span class="">Adresse:</span><br />
+			  Theaterstræde 2<br />
+			  3770 Allinge, Bornholm<br />
 			  Indgang fra Nørregade 7
 			</p>
-			<p class="leading-tight text-justify">
-			  Gæstgiveren, Allinge ApS - CVR-nummer: 35227091
+			<p class="text-sm">
+			  Gæstgiveren, Allinge ApS – CVR-nummer: 35227091
 			</p>
-    </div>
-	
-</MainLayout>
-
-
-<script is:inline>
-	window.addEventListener("scroll", () => {
-	  const el = document.querySelector(".parallaxelement");
-	  if (!el) return;
+		  </div>
   
-	  const scrollY = window.scrollY;
-	  const start = 0;
-	  const end = 1000;
-	  const minY = 0;
-	  const maxY = -400; // scroller opad, derfor negativ
+		</div>
+	  </div>
+	</article>
   
-	  const progress = Math.min(Math.max(scrollY / end, 0), 1);
-	  const translateY = minY + (maxY - minY) * progress;
+	<!-- Parallax script -->
+	<script is:inline>
+	  window.addEventListener("scroll", () => {
+		const el = document.querySelector(".parallaxelement");
+		if (!el) return;
   
-	  el.style.transform = `translateY(${translateY}px)`;
-	});
-  </script>
+		const scrollY = window.scrollY;
+		const start = 0;
+		const end = 1000;
+		const minY = 0;
+		const maxY = -400;
+  
+		const progress = Math.min(Math.max(scrollY / end, 0), 1);
+		const translateY = minY + (maxY - minY) * progress;
+  
+		el.style.transform = `translateY(${translateY}px)`;
+	  });
+	</script>
+  </MainLayout>
+  
+  
