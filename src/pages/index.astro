@@ -5,41 +5,112 @@ import List from '../components/List.astro';
 import { Image } from 'astro:assets';
 import himmel from "../assets/images/himmel.webp";
 import img1 from "../assets/images/img1.webp";
+import peter_sommer from "../assets/images/peter_sommer.webp";
+import goss_schoolofx from "../assets/images/goss_schoolofx.webp";
+import brimheim_angmig from "../assets/images/brimheim_angmig.webp";
+import selma_elias from "../assets/images/selma_elias.webp";
+import oeasten_soen from "../assets/images/oeasten_soen.webp";
 ---
 
 <MainLayout title="Gæsten Festival 2025">
-  <!-- Simpel hero med fast billede og tekst -->
-  <section class="relative min-h-screen w-full flex flex-col items-center justify-center text-center text-white px-6 py-32 bg-cover bg-center" style={`background-image: url('${img1.src}');`}>
-    <div class="absolute inset-0 bg-black/50 z-0"></div>
-    <div class="relative z-10 max-w-3xl">
-      <h1 class="text-5xl">Oplev magien på Gæsten Festival</h1>
-      <div class="mt-8">
-        <Button>Køb Billet</Button>
+  <!-- Hero billede-karrusel -->
+  <div class="relative w-full h-[70vh] overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="w-full h-full relative">
+        <div class="absolute inset-0 transition-opacity duration-[500ms] ease-in-out opacity-100" data-hero-slide>
+          <img src={goss_schoolofx.src} alt="Slide 1" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute inset-0 transition-opacity duration-[500ms] ease-in-out opacity-0" data-hero-slide>
+          <img src={brimheim_angmig.src} alt="Slide 2" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute inset-0 transition-opacity duration-[500ms] ease-in-out opacity-0" data-hero-slide>
+          <img src={selma_elias.src} alt="Slide 3" class="w-full h-full object-cover" />
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- 5 forskudte List-komponenter med himmelbaggrund -->
   <section class="relative w-full px-6 py-24 text-black" style={`background-image: url('${himmel.src}'); background-size: cover; background-attachment: fixed; background-position: center;`}>
     <div class="relative z-10 flex flex-col gap-24 p-10">
       <div class="self-start">
-        <List ugetal="UGE 27" guest1="3.7 Marie Key (duo)" guest2="4.7 The Minds of 99" guest3="5.7 The Minds of 99" logoPath="/gaesten_logo-drejet.svg" />
+        <List 
+          ugetal="UGE 27" 
+          guest1="3.7 Marie Key (duo)" 
+          guest2="4.7 The Minds of 99" 
+          guest3="5.7 The Minds of 99" 
+          logoPath="/gaesten_logo-drejet.svg" />
       </div>
       <div class="self-end">
-        <List ugetal="UGE 28" guest1="8.7 Benjamin Hav & Familien" guest2="9.7 Benjamin Hav & Familien" guest3="10.7 Goss & School of X" guest4="11.7 MØ" guest5="12.7 Soleima" logoPath="/gaesten_logo-drejet.svg" />
+        <List 
+          ugetal="UGE 28" 
+          guest1="8.7 Benjamin Hav & Familien" 
+          guest2="9.7 Benjamin Hav & Familien" 
+          guest3="10.7 Goss + School of X" 
+          guest4="11.7 MØ" 
+          guest5="12.7 Soleima" 
+          logoPath="/gaesten_logo-drejet.svg" />
       </div>
       <div class="self-start">
-        <List ugetal="UGE 29" guest1="15.7 Barselona" guest2="16.7 Emma Sehested Høegh" guest3="18.7 Teitur (solo)" guest4="19.7 APHACA" logoPath="/gaesten_logo-drejet.svg" />
+        <List 
+          ugetal="UGE 29" 
+          guest1="15.7 Barselona" 
+          guest2="16.7 Emma Sehested Høegh" 
+          guest3="18.7 Teitur (solo)" 
+          guest4="19.7 APHACA" 
+          logoPath="/gaesten_logo-drejet.svg" />
       </div>
       <div class="self-end">
-        <List ugetal="UGE 30" guest1="22.7 Brimheim + Angående mig" guest2="23.7 Peter Sommer" guest3="24.7 Hugorm" guest4="25.7 Malte Ebert" guest5="26.8 Selma Judith + Elias Rønnenfelt" logoPath="/gaesten_logo-drejet.svg" />
+        <List 
+          ugetal="UGE 30" 
+          guest1="22.7 Brimheim + Angående mig" 
+          guest2="23.7 Peter Sommer" 
+          guest3="24.7 Hugorm" 
+          guest4="25.7 Malte Ebert" 
+          guest5="26.8 Selma Judith + Elias Rønnenfelt" 
+          logoPath="/gaesten_logo-drejet.svg" />
       </div>
       <div class="self-start">
-        <List ugetal="UGE 31" guest1="28.7 Caroline Henderson" guest2="29.7 Andreas Odbjerg" guest3="30.7 Østen + Søn" guest4="31.7 Jada" guest5="1.8 Benny Jamz" guest6="2.8 TV·2" logoPath="/gaesten_logo-drejet.svg" />
+        <List 
+          ugetal="UGE 31" 
+          guest1="28.7 Caroline Henderson" 
+          guest2="29.7 Andreas Odbjerg" 
+          guest3="30.7 Østen + Søn" 
+          guest4="31.7 Jada" 
+          guest5="1.8 Benny Jamz" 
+          guest6="2.8 TV·2" 
+          logoPath="/gaesten_logo-drejet.svg" />
+      </div>
+
+      <!-- Fremhæv Peter Sommer henover skyerne -->
+      <div class="relative z-20 w-full flex justify-center">
+        <div class="max-w-xl w-full">
+          <img src={peter_sommer.src} alt="Peter Sommer" class="w-full object-cover shadow-lg" />
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Script til billedrotation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('[data-hero-slide]');
+      let current = 0;
+
+      setInterval(() => {
+        slides[current].classList.remove('opacity-100');
+        slides[current].classList.add('opacity-0');
+
+        current = (current + 1) % slides.length;
+
+        slides[current].classList.remove('opacity-0');
+        slides[current].classList.add('opacity-100');
+      }, 4000); // 4 sekunder mellem slides
+    });
+  </script>
 </MainLayout>
+
+
 
 
 
