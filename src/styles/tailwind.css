@@ -44,7 +44,7 @@ h1 {
 }
 
 h2 {
-  @apply text-[64px] lg:text-[80px] mb-[20px] lg:mb-[50px] font-['Courier_New'];
+  @apply text-[48px] mb-[20px] lg:mb-[50px] font-['Courier_New'];
 }
 
 h3 {
