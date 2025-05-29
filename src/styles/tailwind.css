@@ -36,6 +36,7 @@
 
   body {
     background-color: var(--gul-200);
+    cursor: pointer;
   }
 }
 
@@ -48,7 +49,7 @@ h2 {
 }
 
 h3 {
-  @apply text-3xl lg:text-[32px] mb-[18px] lg:mb-[50px] font-['Courier_New'];
+  @apply lg:text-[32px] mb-[18px] lg:mb-[50px] font-['Courier_New'];
 }
 
 p,
