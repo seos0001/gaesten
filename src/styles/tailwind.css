@@ -38,41 +38,53 @@
     background-color: var(--gul-200);
     cursor: pointer;
   }
-}
 
-h1 {
-  @apply text-[96px] lg:text-[80px] mb-[24px] lg:mb-[50px] font-['Courier_New'];
-}
+  h1 {
+    @apply text-[96px] lg:text-[80px] mb-[24px] lg:mb-[50px] font-['Courier_New'];
+  }
 
-h2 {
-  @apply text-[48px] mb-[20px] lg:mb-[50px] font-['Courier_New'];
-}
+  h2 {
+    @apply text-[48px] mb-[20px] lg:mb-[50px] font-['Courier_New'];
+  }
 
-h3 {
-  @apply lg:text-[32px] mb-[18px] lg:mb-[50px] font-['Courier_New'];
-}
+  h3 {
+    @apply lg:text-[32px] mb-[18px] lg:mb-[50px] font-['Courier_New'];
+  }
 
-p,
-a {
-  @apply text-[24px] lg:text-[16px] font-['Courier_New'];
-}
+  p,
+  a {
+    @apply text-[24px] lg:text-[16px] font-['Courier_New'];
+  }
 
-.font-kapakana {
-  font-family: "Kapakana", sans-serif;
+  .font-kapakana {
+    font-family: "Kapakana", sans-serif;
+  }
 }
 
 @layer utilities {
-}
-/* Marquee animation */
-.animate-marquee {
-  animation: marquee 25s linear infinite;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(-100%);
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
   }
-  100% {
-    transform: translateX(0%);
+
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
