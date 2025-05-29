@@ -11,6 +11,8 @@ import brimheim_angmig from "../assets/images/brimheim_angmig.webp";
 import selma_elias from "../assets/images/selma_elias.webp";
 import oesten_soen from "../assets/images/oesten_soen.webp";
 import star from "../assets/images/star.svg";
+import lights from "../assets/images/lights.gif";
+
 ---
 
 <MainLayout title="Gæsten Festival 2025">
@@ -58,31 +60,32 @@ import star from "../assets/images/star.svg";
 
 <!-- Programsektion -->
 <section id="skyer" class="relative w-full px-6 py-16 text-black" style={`background-image: url('${himmel.src}'); background-size: cover; background-attachment: fixed; background-position: center;`}>
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-6xl mx-auto relative">
 
     <h1 class="font-kapakana text-center mb-12 text-[42px] animate-pulse" style="color: var(--rød-500); -webkit-text-stroke: 1px black;">
       Program for 2025
     </h1>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 px-4">
-      <!-- Venstre kolonne – Info-boks + 2 lister -->
-      <div class="flex flex-col gap-10 justify-start items-start md:translate-y-12">
-        <!-- Info-boks med stjerne -->
-        <div class="bg-[var(--gul-500)] border border-[var(--rød-500)] text-sm p-4 shadow flex items-start gap-3 w-full max-w-[550px]">
-          <img src={star.src} alt="Stjerne" class="w-6 h-6 mt-1 flex-shrink-0" />
-          <p class="leading-snug">
-            Alle koncerter starter kl. 20.00.<br />
-            Langbordsmiddag serveres kl. 17.30<br />
-            inden koncertstart.
-          </p>
-        </div>
+    <!-- Flydende info-boks over grid -->
+    <div class="absolute left-0 md:left-6 bg-[var(--gul-500)] border border-[var(--rød-500)] p-4 shadow flex items-start gap-3 self-start ml-10 mt-[-40px] mb-10 max-w-md">
+      <img src={star.src} alt="Stjerne" class="w-15 h-15 mt-1 flex-shrink-0" />
+      <p class="leading-snug">
+        Alle koncerter starter kl. 20.00.<br />
+        Langbordsmiddag serveres kl. 17.30<br />
+        inden koncertstart.
+      </p>
+    </div>
 
+
+    <!-- Grid med lister -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 px-4 mt-16 md:mt-24">
+      <!-- Venstre kolonne -->
+      <div class="flex flex-col gap-16 justify-center md:translate-y-12">
         <List ugetal="UGE 28" guest1="8.7 Benjamin Hav & Familien" guest2="9.7 Benjamin Hav & Familien" guest3="10.7 Goss + School of X" guest4="11.7 MØ" guest5="12.7 Soleima" logoPath="/gaesten_logo-drejet.svg" />
-
         <List ugetal="UGE 30" guest1="22.7 Brimheim + Angående mig" guest2="23.7 Peter Sommer" guest3="24.7 Hugorm" guest4="25.7 Malte Ebert" guest5="26.8 Selma Judith + Elias Rønnenfelt" logoPath="/gaesten_logo-drejet.svg" />
       </div>
 
-      <!-- Højre kolonne – 3 lister -->
+      <!-- Højre kolonne -->
       <div class="flex flex-col gap-10">
         <List ugetal="UGE 27" guest1="3.7 Marie Key (duo)" guest2="4.7 The Minds of 99" guest3="5.7 The Minds of 99" logoPath="/gaesten_logo-drejet.svg" />
         <List ugetal="UGE 29" guest1="15.7 Barselona" guest2="16.7 Emma Sehested Høegh" guest3="18.7 Teitur (solo)" guest4="19.7 APHACA" logoPath="/gaesten_logo-drejet.svg" />
@@ -90,19 +93,24 @@ import star from "../assets/images/star.svg";
       </div>
     </div>
 
-    <!-- Centreret knap under listerne -->
+    <!-- Knap og billede -->
     <div class="mt-12 flex justify-center">
       <Button href="/tickets" label="Køb billet" />
     </div>
 
-    <!-- Fremhæv Peter Sommer henover skyerne -->
     <div class="relative z-20 w-full flex justify-center mt-16">
       <div class="max-w-xl w-full">
+        <img src={lights.src} alt="Lights" class="w-full object-cover mb-10" />
         <img src={peter_sommer.src} alt="Peter Sommer" class="w-full object-cover shadow-lg" />
       </div>
     </div>
   </div>
 </section>
+
+
+
+
+
 
 <!-- Script til billedrotation -->
 <script>
