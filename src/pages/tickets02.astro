@@ -4,44 +4,49 @@ import Button from '../components/Button.astro';
 import Link from '../components/Link.astro';
 import { Image } from 'astro:assets';
 import thumbsup from "../assets/images/thumbsup.png";
-import himmel from "../assets/images/himmel.webp"
+import himmel from "../assets/images/himmel.webp";
 import Formular02 from "../components/Formular.astro";
-import star from "../assets/images/star.svg"; // Sørg for at filnavnet og sti stemmer
+import star from "../assets/images/star.svg"; 
 ---
+
 <MainLayout title="Tickets">
-  <div class="relative h-[90vh]">
-    <!-- Billede bag teksten -->
-    <div class="absolute inset-0 -z-10 h-[90vh]">
+  <div class="relative min-h-screen flex flex-col justify-start items-center pt-32">
+   
+    <!-- Baggrundsbillede -->
+    <div class="absolute inset-0 -z-10">
       <img src={himmel.src} alt="Himmel" class="w-full h-full object-cover object-center" />
     </div>
 
-	  <!-- Info-boks -->
-    <div class="text-sm p-4 w-fit ml-10 mb-10 bg-(--blå-600) shadow">
-		<p> * Alle koncerter starter kl 20.00.<br />Langbordsmiddag serveres kl 17.30 inden koncertstart</p>
-	  </div>
-    	  <!-- Formular -->
-        <Formular02 />
-    <!-- Sliding banner -->
-    <div class="h-12 overflow-hidden mb-6 bg-[var(--blå-600)] w-screen">
-      <div class="animate-marquee whitespace-nowrap flex items-center h-full">
-        <p class="mx-4">Spillested med levende musik</p>
-        <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
-        <p class="mx-4">Hvor de sprøde spiller, spiser og sover</p>
-        <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
-        <p class="mx-4">Sommerferie på toppen af øen</p>
-        <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
-        <p class="mx-4">Spillested med levende musik</p>
-        <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
-        <p class="mx-4">Hvor de sprøde spiller, spiser og sover</p>
-        <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
-        <p class="mx-4">Sommerferie på toppen af øen</p>
-        <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
-        <p class="mx-4">Spillested med levende musik</p>
-        <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
-        <p class="mx-4">Hvor de sprøde spiller, spiser og sover</p>
-        <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
-        <p class="mx-4">Sommerferie på toppen af øen</p>
-      </div>
+    <!-- Info-boks -->
+    <div class="bg-[var(--gul-500)] border border-[var(--rød-500)] p-4 shadow flex items-start gap-3 self-start ml-4 md:ml-10 mt-4 md:mt-[-40px] mb-10 max-w-md">
+      <img src={star.src} alt="Stjerne" class="w-15 h-15 mt-1 flex-shrink-0" />
+      <p class="leading-snug">
+        Alle koncerter starter kl. 20.00.<br />
+        Langbordsmiddag serveres kl. 17.30<br />
+        inden koncertstart
+      </p>
     </div>
 
+    <!-- Formular med padding -->
+    <div class="w-full px-4 mb-10">
+      <Formular02 />
+    </div>
+  </div>
+  
+  <!-- Sliding banner -->
+  <div class="h-12 overflow-hidden mb-6 bg-[var(--blå-600)] w-screen text-sm md:text-base">
+    <div class="animate-marquee whitespace-nowrap flex items-center h-full">
+      <p class="mx-4">Spillested med levende musik</p>
+      <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
+      <p class="mx-4">Hvor de sprøde spiller, spiser og sover</p>
+      <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
+      <p class="mx-4">Sommerferie på toppen af øen</p>
+      <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
+      <p class="mx-4">Spillested med levende musik</p>
+      <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
+      <p class="mx-4">Hvor de sprøde spiller, spiser og sover</p>
+      <img src={star.src} alt="Stjerne" class="w-5 h-5 mx-2" />
+      <p class="mx-4">Sommerferie på toppen af øen</p>
+    </div>
+  </div>
 </MainLayout>

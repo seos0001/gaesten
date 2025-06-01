@@ -3,7 +3,7 @@
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 
-/* Farver */
+/* Definerede farvevariabler */
 :root {
   --gul-200: #ffffd6;
   --gul-300: #ffffc1;
@@ -34,11 +34,13 @@
     border-color: var(--color-gray-200, currentColor);
   }
 
+  /* Global baggrundsfarve og cursor */
   body {
     background-color: var(--gul-200);
     cursor: pointer;
   }
 
+  /* Heading-størrelser og font (Courier New) */
   h1 {
     @apply text-[40px] sm:text-[64px] lg:text-[96px] mb-[24px] lg:mb-[50px] font-['Courier_New'];
   }
@@ -51,18 +53,20 @@
     @apply text-[20px] sm:text-[28px] lg:text-[32px] mb-[18px] lg:mb-[50px] font-['Courier_New'];
   }
 
+  /* Standard font og størrelse for afsnit og links */
   p,
   a {
     @apply text-[16px] sm:text-[18px] lg:text-[18px] font-['Courier_New'] break-words;
   }
 
+  /* Ekstra fontklasse til display brug */
   .font-kapakana {
     font-family: "Kapakana", sans-serif;
   }
 }
 
 @layer utilities {
-  /* Marquee animation */
+  /* Marquee scroll animation til sliding banner*/
   .animate-marquee {
     animation: marquee 15s linear infinite;
   }
@@ -76,6 +80,7 @@
     }
   }
 
+  /* Langsom roterende animation stjerner*/
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -89,6 +94,7 @@
     animation: spin 20s linear infinite;
   }
 
+  /* Fade-in animation */
   @keyframes fadeIn {
     from {
       opacity: 0;
